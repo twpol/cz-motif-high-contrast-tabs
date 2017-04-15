@@ -1,0 +1,49 @@
+/* Link to the base motif to use; the stock motifs are available online as references to chrome: URLs may not work in all cases */
+@import url(http://chatzilla.hacksrus.com/motifs/output-light.css);
+
+/* Customise the tabs to show status across the entire tab */
+
+/* Thise lement contains all the tabs */
+#view-tabs {
+}
+
+/* This element is a single tab */
+#view-tabs .view-button {
+}
+
+/* This element is the highlight bar across the top of the tabs */
+#view-tabs .view-button::before {
+    display: none;
+}
+
+/* This state is for non-chat events (joins/parts/etc.) */
+#view-tabs .view-button[state="superfluous"] {
+    background: darkblue;
+    color: white;
+}
+
+/* This state is for chat events */
+#view-tabs .view-button[state="activity"] {
+    background: darkgreen;
+    color: white;
+}
+
+/* This state is for important events (your nickname was mentioned, private message, etc. */
+#view-tabs .view-button[state="attention"] {
+    background: red;
+    color: white;
+
+    /* These styles are are useful to bring the background area up to the full size of the tab */
+    margin: 0 0 0 1px;
+    border-left: none;
+    border-radius: 0 0 6px 6px;
+    padding: 5px;
+}
+
+/* This state is for the current tab (which uses the same styles as hover by default - but you can split them */
+#view-tabs .view-button:hover,
+#view-tabs .view-button[state="current"] {
+    border-color: black;
+    background: black;
+    color: white;
+}
